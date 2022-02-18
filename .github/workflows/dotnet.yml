@@ -21,7 +21,7 @@ jobs:
     - name: Build
       run: dotnet build --configuration Release /p:Version=${VERSION}
     - name: Pack
-      run: dotnet pack --configuration Release /p:Version=${VERSION} --no-build --output ../../
+      run: dotnet pack --configuration Release /p:Version=${VERSION} --no-build --output .
     - name: Publish
       run: dotnet nuget push TestNuget.${VERSION}.nupkg --source https://nuget.pkg.github.com/iozcelik/index.json --api-key ${GITHUB_TOKEN}
       env:
